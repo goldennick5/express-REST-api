@@ -6,7 +6,7 @@ class userController {
       const users = await userService.getAllUsers();
       res.json(users);
     } catch (error) {
-      console.log(error);
+      console.error(error.message);
     }
   };
 
@@ -22,7 +22,7 @@ class userController {
       const user = await userService.createUser(newUser);
       res.status(201).json(user);
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   }
 }
